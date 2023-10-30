@@ -18,8 +18,7 @@ int check_cycle(listint_t *list)
 		return (0);
 	army = list;
 	scouts = list;
-	do
-	{
+	do {
 		army = army->next;
 		scouts = scouts->next->next;
 		if (army == scouts)
