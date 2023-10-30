@@ -14,8 +14,6 @@ int check_cycle(listint_t *list)
 {
 	listint_t *army, *scouts;
 
-	if (list == 0x0)
-		return (0);
 	army = list;
 	scouts = list;
 	do {
