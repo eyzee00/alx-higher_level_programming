@@ -16,17 +16,12 @@ int check_cycle(listint_t *list)
 
 	army = list;
 	scouts = list;
-	printf("Army and scouts are now separated\n");
 	while (scouts != 0x0 && scouts->next != 0x0)
 	{
 		army = army->next;
 		scouts = scouts->next->next;
 		if (army == scouts)
-		{
-			printf("Army and scouts have met again\n");
-			printf("How are we supposed to win if this keeps happening!\n");
 			return (1);
-		}
 	}
 	return (0);
 }
