@@ -14,15 +14,16 @@ int check_cycle(listint_t *list)
 {
 	listint_t *army, *scouts;
 
+	if (list == 0x0 || list->next == 0x0)
+		return (0);
 	army = list;
 	scouts = list;
-	while (scouts != 0x0 && scouts->next != 0x0)
-	{
+	do {
 		army = army->next;
 		scouts = scouts->next->next;
 		if (army == scouts)
 			return (1);
 		continue;
-	}
+	} while (scouts != 0x0 && scouts->next != 0x0);
 	return (0);
 }
