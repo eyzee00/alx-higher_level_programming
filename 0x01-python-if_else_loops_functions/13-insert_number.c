@@ -15,7 +15,13 @@ listint_t *insert_node(listint_t **head, int number)
 	if (newnode == 0)
 		return (NULL);
 	newnode->n = number;
-	if (number < iter->n || iter == NULL)
+	if (*head == NULL)
+	{
+		newnode->next = NULL;
+		*head = newnode;
+		return (newnode);
+	}
+	if (number < iter->n)
 	{
 		newnode->next = iter;
 		*head = newnode;
