@@ -10,4 +10,3 @@ def fizzbuzz():
             print("{:s} ".format(wordList[2]), end="")
         else:
             print("{:d} ".format(number), end="")
-    print("")
