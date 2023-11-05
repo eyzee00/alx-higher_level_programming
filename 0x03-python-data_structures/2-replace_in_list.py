@@ -6,6 +6,7 @@ def replace_in_list(mylist, idx, new_value):
         return mylist
     else:
         mylist[idx] = new_value
+        return mylist
 
 
 if __name__ == "__main__":
