@@ -2,9 +2,13 @@
 def print_matrix_integer(matrix=[[]]):
     if matrix is None:
         return
+    i = 0
     for row in matrix:
         for column in row:
             print("{:d}".format(column))
+        if i != len(matrix) - 1:
+            print("")
+        i += 1
 
 
 if __name__ == "__main__":
