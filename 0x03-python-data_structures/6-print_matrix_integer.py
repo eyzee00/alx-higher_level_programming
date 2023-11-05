@@ -3,13 +3,15 @@ def print_matrix_integer(matrix=[[]]):
     if matrix is None:
         print("")
         return
-    i = 0
+    j = 0
     for row in matrix:
         for column in row:
             print("{:d}".format(column), end="")
-        if i != len(matrix) - 1:
-            print("")
-        i += 1
+            if j != len(row) - 1:
+                print(" ", end="")
+            j += 1
+        j = 0
+        print("")
 
 
 if __name__ == "__main__":
