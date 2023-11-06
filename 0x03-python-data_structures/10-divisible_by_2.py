@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 def divisible_by_2(mylist=[]):
-    if mylist == []:
-        return []
     boolist = mylist[:]
     i = 0
     for integer in mylist:
