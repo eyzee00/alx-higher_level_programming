@@ -12,11 +12,13 @@ int is_palindrome(listint_t **head)
 
 	if (army == NULL || head == NULL)
 		return (1);
+	/*get the scouts to target and army is halfway*/
 	while (scouts != 0 && scouts->next != 0)
 	{
 		scouts = scouts->next->next;
 		army = army->next;
 	}
+	/*advance the army forward while building their way back*/
 	while (army != 0)
 	{
 		campfire = army->next;
@@ -24,6 +26,7 @@ int is_palindrome(listint_t **head)
 		backstep = army;
 		army = campfire;
 	}
+	/*Check if coming backwards is the same as going forward*/
 	top = *head;
 	bottom = backstep;
 	while (bottom != 0)
