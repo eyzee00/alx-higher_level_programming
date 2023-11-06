@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def max_integer(mylist=[]):
-    if mylist is None:
+    if mylist == []:
         return None
     switch = False
     for integer in mylist:
