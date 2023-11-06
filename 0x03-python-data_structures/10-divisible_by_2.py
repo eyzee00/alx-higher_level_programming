@@ -2,12 +2,14 @@
 def divisible_by_2(mylist=[]):
     if mylist == []:
         return []
-    boolist = []
+    boolist = mylist[:]
+    i = 0
     for integer in mylist:
         if not integer % 2:
-            boolist.append(True)
+            boolist[i] = True
         else:
-            boolist.append(False)
+            boolist[i] = False
+        i += 1
     return boolist
 
 
