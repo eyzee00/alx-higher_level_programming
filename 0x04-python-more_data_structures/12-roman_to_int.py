@@ -16,8 +16,3 @@ def roman_to_int(s):
             converted_res += roman_d[s[i]]
         i += 1
     return converted_res
-
-
-if __name__ == "__main__":
-    print(roman_to_int("XVI"))
-    print(roman_to_int("CIV"))
