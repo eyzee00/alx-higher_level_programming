@@ -2,6 +2,8 @@
 def roman_to_int(s):
     if s is None:
         return 0
+    if not isinstance(s, str):
+        return 0
     roman_d = {
             "I": 1, "V": 5, "X": 10,
             "L": 50, "C": 100, "D": 500,
