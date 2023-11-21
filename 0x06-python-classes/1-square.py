@@ -4,5 +4,7 @@
 
 class Square:
     """Square: defines a square object"""
-    __size = None
-    """__size: private attribute"""
+    def __init__(self, size):
+        """__init__: constructs a square object"""
+        self.size = size
+        """size: private attribute"""
