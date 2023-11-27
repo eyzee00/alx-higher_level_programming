@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module: rectangle class"""
 
+
 class Rectangle:
     """Rectangle: defines a rectangle object"""
     pass
