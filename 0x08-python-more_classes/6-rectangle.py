@@ -7,6 +7,7 @@ class Rectangle:
     number_of_instances = 0
     def __init__(self, width=0, height=0):
         """__init__: constructs an object """
+        Rectangle.number_of_instances += 1
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         elif width < 0:
@@ -20,7 +21,7 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = height
-        number_of_instances += 1
+        
 
     def area(self):
         """area: returns the area of the rectangle"""
@@ -92,3 +93,25 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         else:
             self.__height = value
+
+
+if __name__ == "__main__":
+    my_rectangle = Rectangle(2, 4)
+    print("Area: {} - Perimeter: {}".format(my_rectangle.area(),
+                                              my_rectangle.perimeter()))
+
+    print("--")
+
+    my_rectangle.width = 10
+    my_rectangle.height = 3
+    print("Area: {} - Perimeter: {}".format(my_rectangle.area(),
+                                              my_rectangle.perimeter()))
+
+    print("--")
+
+    print(my_rectangle)
+    print(repr(my_rectangle))
+
+    print("--")
+
+    my_rectangle.my_print()
