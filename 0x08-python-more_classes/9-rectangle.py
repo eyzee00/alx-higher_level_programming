@@ -35,6 +35,7 @@ class Rectangle:
         else:
             return 2 * (self.__width + self.__height)
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """bigger_or_equal: returns the biggest rectangle based on the area"""
         if not isinstance(rect_1, Rectangle):
@@ -46,6 +47,7 @@ class Rectangle:
         else:
             return rect_2
 
+    @classmethod
     def square(cls, size=0):
         """square: returns a Rectangle instance with width==height==size"""
         return cls(size, size)
