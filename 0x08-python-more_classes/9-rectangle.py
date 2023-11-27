@@ -48,8 +48,7 @@ class Rectangle:
 
     def square(cls, size=0):
         """square: returns a Rectangle instance with width==height==size"""
-        square_result = cls(size, size)
-        return square_result
+        return cls(size, size)
 
     def my_print(self):
         """my_print: prints a square instance"""
