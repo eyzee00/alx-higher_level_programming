@@ -1,0 +1,185 @@
+test file for the module '100-lazy_matrix_mul.py'
+--------------------------------------------
+
+case 0:
+    succesfull import
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+>>>
+
+---------------------------------------------
+
+case 1:
+    two matrixes as arguments with a valid size
+
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+[[ 7 10]
+ [15 22]]
+>>>
+
+---------------------------------------------
+
+case 2:
+    first argument is a string
+
+>>> print(lazy_matrix_mul("hola", [[1, 2], [3, 4]]))
+Traceback (most recent call last):
+ValueError: Scalar operands are not allowed, use '*' instead
+>>>
+
+---------------------------------------------
+
+case 3:
+    second argument is a string
+
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], "list"))
+Traceback (most recent call last):
+ValueError: Scalar operands are not allowed, use '*' instead
+>>>
+
+---------------------------------------------
+
+case 4:
+    first argument is not a matrix
+
+>>> print(lazy_matrix_mul([[1, 2], {"h":1}], [[1, 2], [3, 4]]))
+Traceback (most recent call last):
+TypeError: Object arrays are not currently supported
+>>>
+
+---------------------------------------------
+
+case 5:
+    second argument is not a matrix
+
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], 9]))
+Traceback (most recent call last):
+ValueError: setting an array element with a sequence.
+>>>
+
+---------------------------------------------
+
+case 6:
+    first argument is an empty list
+
+>>> print(lazy_matrix_mul([], [[1, 2], [3, 4]])) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+ValueError: Shapes...
+>>>
+
+---------------------------------------------
+
+case 7:
+    first argument is an empty matrix
+
+>>> print(lazy_matrix_mul([[]], [[1, 2], [3, 4]]))  # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+ValueError: Shapes...
+>>>
+
+---------------------------------------------
+
+case 8:
+    second argument is an empty list
+
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], []))  # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+ValueError: Shapes...
+>>>
+
+---------------------------------------------
+
+case 9:
+    second argument is an empty matrix
+
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[]]))  # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+ValueError: Shapes
+>>>
+
+---------------------------------------------
+
+case 10:
+    first argument is a matrix containing invalid elements
+
+>>> print(lazy_matrix_mul([[1, "hola"], [3, 4]], [[1, 2], [3, 4]]))
+Traceback (most recent call last):
+TypeError: invalid data type for einsum
+>>>
+
+---------------------------------------------
+
+case 11:
+    second argument is a matrix containing invalid elements
+
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[[1], 2], [3, 4]]))
+Traceback (most recent call last):
+ValueError: setting an array element with a sequence.
+>>>
+
+---------------------------------------------
+
+case 12:
+    first argument is not a matrix with equal rows
+
+>>> print(lazy_matrix_mul([[1, 2, 3], [3, 4]], [[1, 2], [3, 4]]))
+Traceback (most recent call last):
+ValueError: setting an array element with a sequence.
+>>>
+
+---------------------------------------------
+
+case 13:
+    second argument is not a matrix with equal rows
+
+>>> print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3]]))
+Traceback (most recent call last):
+ValueError: setting an array element with a sequence.
+>>>
+
+---------------------------------------------
+
+case 14:
+    invalid dimensions
+
+>>> print(lazy_matrix_mul([[1, 2, 3], [3, 4, 5], [5, 6, 7]], [[1, 2], [3, 4]])) # doctest: +IGNORE_EXCEPTION_DETAIL
+Traceback (most recent call last):
+ValueError: Shapes...
+>>>
+
+---------------------------------------------
+
+case 15:
+    demanding multiplication
+
+>>> print(lazy_matrix_mul([[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]],[[10], [11], [12], [13], [14], [15], [16], [17], [18], [19]]))
+[[735]]
+>>>
+
+---------------------------------------------
+
+case 16:
+    matrix one element
+
+>>> print(lazy_matrix_mul([[1]], [[1]]))
+[[1]]
+>>>
+
+---------------------------------------------
+
+case 17:
+    one argument is given
+
+>>> print(lazy_matrix_mul([[1]]))
+Traceback (most recent call last):
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+>>>
+
+---------------------------------------------
+
+case 18:
+    no arguments are given
+
+>>> print(lazy_matrix_mul())
+Traceback (most recent call last):
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+>>>
