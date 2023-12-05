@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module: defines a function that adds a new attribute 
+"""Module: defines a function that adds a new attribute
 to an object if it's possible"""
 
 
