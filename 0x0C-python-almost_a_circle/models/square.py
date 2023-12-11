@@ -27,6 +27,7 @@ class Square(Rectangle):
                                                  self.width)
 
     def update(self, *args, **kwargs):
+        """Assigns arguments to the private attributes"""
         if args:
             if len(args) == 1:
                 self.id = args[0]
