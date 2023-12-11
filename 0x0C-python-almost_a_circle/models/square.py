@@ -26,6 +26,34 @@ class Square(Rectangle):
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
 
+    def update(self, *args, **kwargs):
+        if args:
+            if len(args) == 1:
+                self.id = args[0]
+            elif len(args) == 2:
+                self.id = args[0]
+                self.size = args[1]
+            elif len(args) == 3:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+            elif len(args) == 4:
+                self.id = args[0]
+                self.size = args[1]
+                self.x = args[2]
+                self.y = args[3]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Square"""
+        return {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
 
 if __name__ == "__main__":
     s1 = Square(5)
