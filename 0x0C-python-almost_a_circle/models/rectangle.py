@@ -98,7 +98,8 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-#class generic methods
+# class generic methods
+
 
 def area(self):
     """Returns the area of the rectangle"""
