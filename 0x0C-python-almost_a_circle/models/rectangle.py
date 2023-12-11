@@ -98,6 +98,12 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+#class generic methods
+
+def area(self):
+    """Returns the area of the rectangle"""
+    return self.__width * self.__height
+
 
 if __name__ == "__main__":
     try:
