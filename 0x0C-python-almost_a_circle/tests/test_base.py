@@ -302,17 +302,6 @@ class Test_save_to_file(unittest.TestCase):
         """ Set up for all methods """
         Base._Base__nb_objects = 0
 
-    def tearDown(self):
-        """ Tear down for all methods """
-        try:
-            remove("Rectangle.json")
-        except:
-            pass
-        try:
-            remove("Square.json")
-        except:
-            pass
-
     def test_Nofile(self):
         """ Error when file does not exist """
         name = "Rectangle.json"
@@ -410,17 +399,6 @@ class Test_load_from_file(unittest.TestCase):
         """ Set up for all methods """
         Base._Base__nb_objects = 0
 
-    def tearDown(self):
-        """ Tear down for all methods """
-        try:
-            remove("Rectangle.json")
-        except:
-            pass
-        try:
-            remove("Square.json")
-        except:
-            pass
-
     def test_no_file(self):
         """ Test when file does not exist """
         rl1 = Rectangle.load_from_file()
@@ -482,17 +460,6 @@ class Test_save_to_file_csv(unittest.TestCase):
     def setUp(self):
         """ Set up for all methods """
         Base._Base__nb_objects = 0
-
-    def tearDown(self):
-        """ Tear down for all methods """
-        try:
-            remove("Rectangle.csv")
-        except:
-            pass
-        try:
-            remove("Square.csv")
-        except:
-            pass
 
     def test_Nofile_csv(self):
         """ Error when file does not exist """
@@ -575,17 +542,6 @@ class Test_load_from_file_csv(unittest.TestCase):
     def setUp(self):
         """ Set up for all methods """
         Base._Base__nb_objects = 0
-
-    def tearDown(self):
-        """ Tear down for all methods """
-        try:
-            remove("Rectangle.csv")
-        except:
-            pass
-        try:
-            remove("Square.csv")
-        except:
-            pass
 
     def test_no_file_csv(self):
         """ Test when file does not exist """
