@@ -56,6 +56,7 @@ class Square(Rectangle):
             "y": self.y
         }
 
+
 if __name__ == "__main__":
 
     s1 = Square(5)
