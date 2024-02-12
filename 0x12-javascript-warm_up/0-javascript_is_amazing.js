@@ -1,3 +1,3 @@
 #!/usr/bin/node
-const textToPrint = 'Javascript is amazing';
+const textToPrint = 'JavaScript is amazing';
 console.log(textToPrint);
