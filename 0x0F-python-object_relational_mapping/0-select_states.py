@@ -10,6 +10,6 @@ from sys import argv
 if __name__ == "__main__":
     database = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
     cursor = database.cursor()
-    cursor.execute("SELECT * FROM `states` ORDER BY `states.id` ASC")
+    cursor.execute("SELECT * FROM `states` ORDER BY id ASC")
     for row in cursor.fetchall():
         print(row)
