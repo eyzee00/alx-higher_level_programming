@@ -16,4 +16,4 @@ if __name__ == "__main__":
             ORDER BY cities.id"
     cursor.execute(sql)
     for row in cursor.fetchall():
-            print(row)
+        print(row)
