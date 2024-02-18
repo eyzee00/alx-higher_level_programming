@@ -9,7 +9,7 @@ from sys import argv
 if __name__ == "__main__":
     database = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
     cursor = database.cursor()
-    query = "SELECT * FROM `states` WHERE BINARY name='{}'".format(argv[4])
-    cursor.execute(query)
+    sql = "SELECT * FROM `states` WHERE BINARY name='{}'".format(argv[4])
+    cursor.execute(sql)
     for row in cursor.fetchall():
         print(row)
