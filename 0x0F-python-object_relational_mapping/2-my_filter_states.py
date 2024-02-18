@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Module: defines a script that lists all states with names like the given argument
+Module: defines a script that lists all states with names
+like the given argument
 """
 import MySQLdb
 from sys import argv
