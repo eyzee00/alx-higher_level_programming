@@ -12,7 +12,7 @@ if __name__ == "__main__":
     cursor = database.cursor()
     sql = "SELECT * FROM cities \
             INNER JOIN states \
-            ON cities.state_id = state.id \
+            ON cities.state_id = states.id \
             ORDER BY cities.id"
     cursor.execute(sql)
     print(", ".join([cl[2] for cl in cursor.fetchall() if cl[4] == argv[4]]))
