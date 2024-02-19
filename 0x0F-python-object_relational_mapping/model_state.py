@@ -9,5 +9,5 @@ DeclarativeBase = declarative_base()
 class State(DeclarativeBase):
     """Defines a States object (Table)"""
     __tablename__ = "states"
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String, nullable=False)
