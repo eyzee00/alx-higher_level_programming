@@ -3,7 +3,7 @@
 Module: lists all states rows using sqlalchemy
 """
 
-from model_state import Base, State
+from model_state import State
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 from sys import argv
@@ -11,10 +11,9 @@ from sys import argv
 
 if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@\
-            localhost/{}".format(argv[1], argv[2], argv[3]),
-            pool_pre_ping=True)
+            localhost/{}".format(argv[1], argv[2], argv[3]))
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for row in session.query(State).order_by(State.id):
-        print("{0}: {1}".format(row.id, row.name))
+    for state in session.query(State).order_by(State.id):
+        print("{}: {}".format(state.id, state.name))
