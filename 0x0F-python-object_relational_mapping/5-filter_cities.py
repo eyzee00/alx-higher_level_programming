@@ -15,11 +15,11 @@ if __name__ == "__main__":
             ON cities.state_id = state.id \
             ORDER BY cities.id"
     cursor.execute(sql)
-    for index in range(0, len(cursor.fetchall())):
-        name = cursor.fetchall()[index]
-        if name == argv[4]:
-            print(name)
-            if index != len(cursor.fetchall()) - 1:
-                print(",", end="")
+    string_list = list(cursor.fetchall())
+    for index in range(0, len(string_list)):
+        if string_list[index] == argv[4]:
+            print(string_list[index])
+            if index != len(string_list) - 1:
+                print(", ", end="")
             else:
                 print("")
