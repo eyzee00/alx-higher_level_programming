@@ -11,21 +11,17 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    """
-    from the database.
-    """
-
-    db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
+    string = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         argv[1], argv[2], argv[3])
-    engine = create_engine(db_uri)
+    engine = create_engine(string)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
 
     session = Session()
-    cal_state = State(name='California')
-    sfr_city = City(name='San Francisco')
-    cal_state.cities.append(sfr_city)
+    state = State(name='California')
+    city = City(name='San Francisco')
+    state.cities.append(city)
 
-    session.add(cal_state)
+    session.add(state)
     session.commit()
     session.close()
