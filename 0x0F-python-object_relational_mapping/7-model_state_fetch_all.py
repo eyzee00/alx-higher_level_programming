@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Lists all State objects from the database hbtn_0e_6_usa.
+"""Module: Lists all State objects from the database hbtn_0e_6_usa"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import State
